@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<title>Registration Form</title>
+</head>
+<body>
+<div class="shadow p-1 m-5 bg-white rounded">
+<div class="m-5">
+    <div class="card-header bg-gradient-primary text-blue">
+       <h3 class="text-center">USER REGISTRATION</h3>
+    </div>
+<form class="row g-3 m-3" th:action="@{/register-user}" th:object="${userDetails}" method="POST">
+  <div class="col-md-6">
+    <label  class="form-label">First Name*</label>
+    <input type="text" class="form-control" name="firstName" th:field="*{firstName}">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Last Name*</label>
+    <input type="text" class="form-control" name="lastName" th:field="*{lastName}">
+  </div>
+  <div class="col-12">
+    <label class="form-label">Email*</label>
+    <input type="text" class="form-control" name="email" th:field="*{email}" placeholder="abcd@gmail.com">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Phone Number</label>
+    <input type="text" class="form-control" name="phoneNumber" th:field="*{phoneNumber}" >
+  </div>
+  <div class="d-flex p-1 gap-1">
+   Gender : 
+    <input type="radio"  name="gender" th:field="*{gender}" value="M">
+    <label>Male</label><br>
+    <input type="radio" name="gender" th:field="*{gender}" value="F">
+    <label>Female</label><br>
+  </div>
+  
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">State</label>
+    <input type="text" class="form-control" name="state" th:field="*{state}">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Country</label>
+    <input type="text" class="form-control" name="country" th:field="*{country}">
+    </select>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Register</button>
+  </div>
+</form>
+</div>
+</div>
+</body>
+</html>
